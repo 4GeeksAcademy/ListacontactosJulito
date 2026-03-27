@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 
 export const Navbar = () => {
-
+const {store,dispatch} =useGlobalReducer()
 	return (
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
@@ -10,7 +16,7 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+						<button className="btn btn-primary">Add New Contact</button>
 					</Link>
 				</div>
 			</div>
